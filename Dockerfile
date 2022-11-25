@@ -2,8 +2,7 @@
 #
 # Adds the default Ubuntu uid(1000) to the www-data user. This is so
 # both of the uid's  on the host and the container match. The www-data user
-# is used by Apache to make directory/file level changes to I changed it to
-# that user
+# is used by Apache to make directory/file level changes.
 #
 #
 # It also grants ownership to the /var/www folder to the www-data user. 
