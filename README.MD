@@ -18,3 +18,5 @@ It uses Docker as the environment, Mysql as the database and Apache as the web s
 
 That will build your container and you are all set! You now have an environment that you can spin up in minutes!
 
+Docker Hub: https://hub.docker.com/r/liquidloose/wordpress-image
+
