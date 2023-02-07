@@ -13,7 +13,6 @@
 FROM wordpress:latest
 
 RUN apt-get update
-RUN apt-get nano
 
 # Install pdo_mysql extension for better db compatability
 RUN docker-php-ext-install pdo_mysql
