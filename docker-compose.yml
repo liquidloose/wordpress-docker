@@ -5,7 +5,6 @@ services:
     image: mysql:8.0.23
     ports:
       - ${DB_PORT}:${DB_PORT}
-      - 3306:3306
       - 443:443
     volumes:
       - db_data:/var/lib/mysql
@@ -22,7 +21,6 @@ services:
     image: liquidloose/wordpress-image
     ports:
       - ${WEB_PORT}:80
-      - 8081:80
     restart: always
     extra_hosts:
       - "api.wordpress.org:198.143.164.251"
@@ -36,8 +34,8 @@ services:
       - type: bind
         source: ${CLIENT_SOURCE}
         target: ${CONTAINER_TARGET}
-        source: ~/development/wordpress/site_1
-        target: /var/www
+        source: ${CLIENT_SOURCE}
+        target: ${CONTAINER_TARGET}
  
 volumes:
   db_data: {}
