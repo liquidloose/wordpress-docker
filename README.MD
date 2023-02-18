@@ -2,8 +2,8 @@ This is a basic Docker/Wordpress setup. You can use this to spin up a quick envi
 
 It uses Docker as the environment, Mysql as the database and Apache as the web server. The settings can all be adjusted in the .yml file provided.
 
-1. `docker  build -t insert-image-name-here . ` 
-2. Create a .env file and make it look something like this:
+1. If you want to make your own container: `docker  build -t insert-image-name-here . ` 
+2. If you want to make your own container: you're free to add the values in a .env file and make it look something like this:
 
     `DB_PORT = 3000` <br />
     `WEB_PORT= 8003` <br />
