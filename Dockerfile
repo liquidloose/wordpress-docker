@@ -24,6 +24,8 @@ RUN cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
 # Uncomment below and comment out dev environment in order to build a production environment
 # RUN cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
 
+# Keeps the host user and www-data as the same uid so Docker doesn't see
+# a different number and complain
 RUN groupmod -g 1000 www-data \
     && usermod -u 1000 www-data \
     && usermod -g 1000 www-data \
