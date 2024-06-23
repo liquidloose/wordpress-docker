@@ -6,7 +6,7 @@
         "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
     },
     "editor.formatOnSave": true,
-    "workbench.colorTheme": "Solarized Dark",
+    "workbench.colorTheme": "Ayu Dark Bordered",
     "intelephense.phpdoc.textFormat": "text",
     "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
     "intelephense.phpdoc.functionTemplate": {
@@ -94,3 +94,4 @@
         "zlib",
         "wordpress"
     ],
+}
