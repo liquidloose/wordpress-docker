@@ -6,7 +6,7 @@ services:
     image: mysql:latest
     ports:
       - "${DB_PORT}:${DB_PORT}"
-      - "443:443"
+      - "442:443"
     volumes:
       - db_data:/var/lib/mysql
     environment:
@@ -37,11 +37,14 @@ services:
       - type: bind
         source: "./wordpress.ini"
         target: "/usr/local/etc/php/conf.d/wordpress.ini"
+      - type: bind
+        source: ${WP_CONFIG_SOURCE}
+        target: ${WP_CONFIG_TARGET}
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     ports:
-      - "8080:80"  # You can change the first number (8080) to any port you prefer for accessing phpMyAdmin
+      - "${PHP_MYADMIN_PORT}:80"  # You can change the first number (8080) to any port you prefer for accessing phpMyAdmin
     environment:
       PMA_HOST: db
       PMA_USER: ${DB_USER}
