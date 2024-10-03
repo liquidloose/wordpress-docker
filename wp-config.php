@@ -112,6 +112,10 @@ define('WP_DEBUG', !!getenv_docker('WORDPRESS_DEBUG', ''));
 
 // If we're behind a proxy server and using HTTPS, we need to alert WordPress of that fact
 // see also https://wordpress.org/support/article/administration-over-ssl/#using-a-reverse-proxy
+$local_url = 'https://' . getenv_docker('LOCAL_URL', '');
+define('WP_HOME', $local_url);
+define('WP_SITEURL', $local_url);
+
 if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false) {
 	$_SERVER['HTTPS'] = 'on';
 }
