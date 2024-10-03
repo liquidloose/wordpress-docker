@@ -4,9 +4,6 @@
 services:
   db:
     image: mysql:latest
-    ports:
-      - "${DB_PORT}:${DB_PORT}"
-      - "442:443"
     volumes:
       - db_data:/var/lib/mysql
     environment:
@@ -32,14 +29,14 @@ services:
       WORDPRESS_DEBUG: "1" # A non-empty value enables WP_DEBUG in wp-config.php
     volumes:
       - type: bind
-        source: ${CLIENT_SOURCE}
-        target: ${CONTAINER_TARGET}
+        source: "./WordPress/wp-content/"
+        target: "/var/www/html/wp-content/"
       - type: bind
         source: "./wordpress.ini"
         target: "/usr/local/etc/php/conf.d/wordpress.ini"
       - type: bind
-        source: ${WP_CONFIG_SOURCE}
-        target: ${WP_CONFIG_TARGET}
+        source: "./wp-config.php"
+        target: "/var/www/html/wp-config.php"
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
