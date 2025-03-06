@@ -1,22 +1,49 @@
-This is a basic Docker/Wordpress setup. You can use this to quickly spin up a local dev site.
+Basic Docker/WordPress Setup
+Use this setup to quickly spin up a local development site with Docker as the environment, MySQL as the database, and Apache as the web server. Adjust settings in the .yml file, although using an .env file is recommended (see step 2).
 
-It uses Docker as the environment, Mysql as the database and Apache as the web server. The settings can all be adjusted in the .yml file provided, though it is recomended that you use an .env file(see number 2).
+Steps
+Build Your Own Image:
 
-If you want to build off of my image and make your own, then in the same directory as the Dockerfile run: docker  build -t insert-image-name-here . . If you go this route, you will need to edit line 21 of the .yml file. You will have to enter: `docker.io/library/<your-container-name>` there instead of liquidloose/wordpress-image.
+In the same directory as the Dockerfile, run:
 
-If you want to use the image that I have provided as-is,then you simply need to create an .env file and add your custom values. Here is an example of what that would look like:
+```bash
+docker build -t insert-image-name-here .
+```
+Edit line 21 of the .yml file to:
 
-DB_PORT = 3000
-WEB_PORT= 8003
-MYSQL_ROOT_PASSWORD= "catsAreBros"
-DB_NAME= "database-name"
-DB_USER= "name"
-DB_PASSWORD= "password"
- CLIENT_SOURCE= "/path/to/your/wordpress/installation"
- CONTAINER_TARGET= "/var/www/html" // Leave this as is. This will be where your files are located inside of your container.
+```yaml
+docker.io/library/<your-container-name>
+```
+instead of liquidloose/wordpress-image.
 
-Once that's complete, in the same directory, enter the following command: docker compose up.
+Use Provided Image:
 
-That will build your container and you are all set! You now have an environment that you can spin up in minutes! In your browser, simply type in your host ip address followed by the port. Here's an example: 192.168.1.26:8003. If 192.168.1.26 is the ip address of your computer and you set the WEB_PORT to 8003 as shown above, you will now have access to your new dev environment! Have fun!
+Create an .env file and add your custom values:
 
-Docker Hub: https://hub.docker.com/r/liquidloose/wordpress-image
+```env
+DB_PORT=3000
+WEB_PORT=8003
+MYSQL_ROOT_PASSWORD="catsAreBros"
+DB_NAME="database-name"
+DB_USER="name"
+DB_PASSWORD="password"
+CLIENT_SOURCE="/path/to/your/wordpress/installation"
+CONTAINER_TARGET="/var/www/html" # Leave this as is. This will be where your files are located inside of your container.
+```
+
+Start Docker:
+
+In the same directory, enter the command:
+
+```bash
+docker compose up
+```
+
+This will build your container, and you'll have an environment ready to use in minutes!
+
+Access Your Dev Environment:
+
+In your browser, type in your host IP address followed by the port. For example:
+
+192.168.1.26:8003
+If 192.168.1.26 is the IP address of your computer and you set the WEB_PORT to 8003, you will now have access to your new development environment.

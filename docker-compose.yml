@@ -38,6 +38,21 @@ services:
         source: "./wp-config.php"
         target: "/var/www/html/wp-config.php"
 
+  my-wpcli:
+    image: wordpress:cli
+    user: 1000:1000
+    volumes_from:
+      - wordpress
+    links:
+      - db:mysql
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: ${DB_NAME}
+      WORDPRESS_DB_USER: ${DB_USER}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
+    entrypoint: /bin/sh
+    tty: true
+
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     ports:
