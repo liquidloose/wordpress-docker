@@ -48,4 +48,4 @@ This will build your container, and you'll have an environment ready to use in m
 In your browser, type in your host IP address followed by the port. For example:
 
 ```192.168.1.26:8003```
-If ```192.168.1.26``` is the IP address of your computer and you set the WEB_PORT to 8003, you will now have access to your new development environment.
+If ```192.168.1.26``` is the IP address of your computer and you set the WEB_PORT to ```8003```, you will now have access to your new development environment.
