@@ -1,7 +1,8 @@
-Basic Docker/WordPress Setup
-Use this setup to quickly spin up a local development site with Docker as the environment, MySQL as the database, and Apache as the web server. Adjust settings in the .yml file, although using an .env file is recommended (see step 2).
+#Basic Docker/WordPress Setup
 
-Steps
+##Use this setup to quickly spin up a local development site with Docker as the environment, MySQL as the database, and Apache as the web server. Adjust settings in the .yml ##file, although using an .env file is recommended (see step 2).
+
+#Steps
 Build Your Own Image:
 
 In the same directory as the Dockerfile, run:
@@ -16,7 +17,7 @@ docker.io/library/<your-container-name>
 ```
 instead of liquidloose/wordpress-image.
 
-Use Provided Image:
+#Use Provided Image:
 
 Create an .env file and add your custom values:
 
@@ -31,7 +32,7 @@ CLIENT_SOURCE="/path/to/your/wordpress/installation"
 CONTAINER_TARGET="/var/www/html" # Leave this as is. This will be where your files are located inside of your container.
 ```
 
-Start Docker:
+##Start Docker:
 
 In the same directory, enter the command:
 
@@ -41,7 +42,7 @@ docker compose up
 
 This will build your container, and you'll have an environment ready to use in minutes!
 
-Access Your Dev Environment:
+##Access Your Dev Environment:
 
 In your browser, type in your host IP address followed by the port. For example:
 
