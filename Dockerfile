@@ -1,5 +1,3 @@
-#
-#
 # Adds the default Ubuntu uid(1000) to the www-data user. This is so
 # both of the uid's  on the host and the container match. The www-data user
 # is used by Apache to make directory/file level changes.
@@ -31,4 +29,5 @@ RUN groupmod -g 1000 www-data \
     && usermod -g 1000 www-data \
     && chown -R www-data:www-data /var/www \
     && chmod g+s /var/www
+
 

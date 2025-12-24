@@ -1,0 +1,14 @@
+#
+# WP-CLI Dockerfile with git for cloning custom plugins
+#
+
+FROM wordpress:cli
+
+# Switch to root to install packages
+USER root
+
+# Install git
+RUN apk add --no-cache git
+
+# Switch back to www-data user
+USER www-data

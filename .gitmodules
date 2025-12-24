@@ -1,0 +1,6 @@
+[submodule "custom-plugins/to-tha-top"]
+	path = custom-plugins/to-tha-top
+	url = https://github.com/liquidloose/to-tha-top.git
+[submodule "custom-plugins/rivedge-image-slider"]
+	path = custom-plugins/rivedge-image-slider
+	url = https://github.com/liquidloose/rivedge-image-slider.git
